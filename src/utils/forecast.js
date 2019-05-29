@@ -9,7 +9,7 @@ const forecast = (longitude, latitude, callback) => {
         } else if(body.error) {
             callback('invalid location input', undefined);
         } else {
-            callback(undefined, `${body.daily.data[0].summary} it is currently ${body.currently.temperature} degrees out. there is a ${body.currently.precipProbability}% chance of rain`);
+            callback(undefined, `${body.daily.data[0].summary}. it is currently ${body.currently.temperature} degrees out. there is a ${body.currently.precipProbability}% chance of rain. humidity is ${body.currently.humidity} and wind speed is ${body.currently.windSpeed}`);
         }
     });
 };
